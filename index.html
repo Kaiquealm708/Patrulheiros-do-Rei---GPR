@@ -4,6 +4,8 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="style.css">
+      <!--link para o font awesome-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
       <title>Patrulheiros do Rei - Página Inicial</title>
     </head>
 
@@ -11,14 +13,14 @@
 
       <header>
         <div class="logo">
-          <img src="img/logoGPR.png">
+          <a href="index.html"><img src="img/logoGPR.png" alt="Logo GPR"></a>
         </div>
   
         <nav>
           <ul class="menu">
-            <li><a href="#">Acampamento</a></li>
-            <li><a href="#">Sobre nós</a></li>
-            <li><a href="#">Contato</a></li>
+            <li><a href="acampamento.html" target="_blank">Acampamento</a></li>
+            <li><a href="#who-us">Sobre nós</a></li>
+            <li><a href="#contact">Contato</a></li>
           </ul>
         
           <!-- botão hamburguer -->
@@ -53,21 +55,25 @@
   
         <section class="vaquinha">
   
-          <h2>Contribua com a nossa vaquinha!</h2>
+          <div class="vaquinha-bg"></div>
           
-        
-          <div class="video-container">
-            <iframe width="560" height="315" 
-              src="https://www.youtube.com/embed/bfRm-MrID6M?si=zTzpWT6C3c_f2V_h"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" 
-              allowfullscreen>
-            </iframe>
+          <div class="vaquinha-content">
+            <h2>Contribua com a nossa vaquinha!</h2>
+          
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/bfRm-MrID6M" 
+                frameborder="0"
+                allowfullscreen>
+              </iframe>
+            </div>
+          
+            <p class="vaq-txt">
+              Saiba mais em:
+              <a href="https://campanhadobem.com.br/campanhas/onibus-patrulheiros-do-rei?%20fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn-_er5d6X4AJrkCwaw_zG4QATHKnoNhsfsIHtQ8Ay6a8jXzWxUBURc1mkhG8_aem_Xn5EGrnNPnC4_UqqBh60tA#/" target="_blank">
+                <button class="btn-link">Campanha do Bem - Ônibus GPR</button>
+              </a>
+            </p>
           </div>
-          
-            <p class="vaq-txt">Saiba mais em: <a href="https://campanhadobem.com.br/campanhas/onibus-patrulheiros-do-rei? fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn-_er5d6X4AJrkCwaw_zG4QATHKnoNhsfsIHtQ8Ay6a8jXzWxUBURc1mkhG8_aem_Xn5EGrnNPnC4_UqqBh60tA#/"
-            target="_blank"><button class="btn-link">Campanha do Bem - Ônibus GPR</button></a></p>
           
   
         </section>
@@ -75,7 +81,7 @@
   
         <section class="carrossel-section">
   
-          <h2>Quem somos?</h2>
+          <h2 id="who-us">Quem somos?</h2>
   
           <div class="carrossel">
   
@@ -102,7 +108,7 @@
   
         <section class="contato">
   
-          <h2>Fale conosco!</h2>
+          <h2 id="contact">Fale conosco!</h2>
   
           <div class="box-contato">
   
@@ -139,4 +145,5 @@
     </body>
   
   <script src="script.js"></script>
+  <script async src="//www.instagram.com/embed.js"></script>
 </html>
