@@ -1,29 +1,54 @@
-let slides = document.querySelector(".slides")
-let slide = document.querySelectorAll(".slide")
+const elemSlides = document.querySelector('.slides');
+const elemBotaoEsquerdo = document.querySelector('.prev');
+const elemBotaoDireito = document.querySelector('.next');
+const elemsImagem = document.querySelectorAll('.slides IMG');
 
-let index = 0
+const tamanhoLista = elemsImagem.length - 1;
 
-document.querySelector(".next").onclick = () => {
+let index = 0;
+elemBotaoEsquerdo.addEventListener('click', () => {
+  index--;
 
-index++
+  if (index < 0) index = tamanhoLista;
 
-if(index >= slide.length){
-index = 0
+  atualizarCarrossel();
+  //console.log(index);
+});
+
+elemBotaoDireito.addEventListener('click', () => {
+  incrementarIndex();
+  atualizarCarrossel();
+  //console.log(index);
+});
+
+const incrementarIndex = () => {
+  index++;
+  if (index > tamanhoLista) index = 0;
 }
 
-slides.style.transform = `translateX(-${index * 100}%)`
-}
+const atualizarCarrossel = () => {
+  elemSlides.style.transform = `translateX(-${index * 100}%)`;
+};
 
-document.querySelector(".prev").onclick = () => {
+let interval;
 
-index--
+const iniciarAuto = () => {
+  interval = setInterval(() => {
+    incrementarIndex();
+    atualizarCarrossel();
+  }, 3000);
+};
 
-if(index < 0){
-index = slide.length - 1
-}
+const pararAuto = () => {
+  clearInterval(interval);
+};
 
-slides.style.transform = `translateX(-${index * 100}%)`
-}
+iniciarAuto();
+
+const carrossel = document.querySelector('.carrossel');
+
+carrossel.addEventListener('mouseenter', pararAuto);
+carrossel.addEventListener('mouseleave', iniciarAuto);
 
 
 function toggleMenu() {
@@ -45,3 +70,4 @@ window.addEventListener("scroll", function () {
         "translateY(" + (scrollPercent * 100) + "px) scale(1.1)";
     }
   });
+
